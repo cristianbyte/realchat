@@ -1,0 +1,157 @@
+:root{
+    --xyketic: #0A0213;
+    --purple-x-11: #9530F2;
+    --honeydew: #ECFEF2;
+    --white: #fff;
+    --spring-green: #18f264;
+}
+
+.register{
+    position: relative;
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 5vh 0;
+}
+
+.register::before{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    content: '';
+    display: inline-block;
+    background-image: url(./assets/befun-bereal.jpg);
+    background-size: cover;
+    background-position: center;
+    transform: rotateY(180deg);
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+.formContainer{
+    width: clamp(300px, 40vw, 500px);
+    height: 90vh;
+    background-color: var(--white);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.formContainer p{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--purple-x-11);
+
+}
+
+.register__slogan{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--honeydew);
+    display: flex;
+    gap: 1rem;
+    align-self: center;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 50%;
+    font-weight: 700;
+    font-size: calc(2.2vw + 2.2vh);
+    text-align: left;
+}
+
+.register__slogan img{
+    width: calc(6vw + 6vh);
+    background-color: var(--purple-x-11);
+    border-radius: 20%;
+    padding: 1rem;
+}
+
+.register h3{
+    animation: lapper 1s infinite alternate-reverse;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 800;
+    color: var(--purple-x-11);
+    font-size: calc(3vh + 2vw);
+    box-sizing: border-box;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+input::placeholder{
+    color: var(--spring-green);
+    opacity: .5;
+}
+
+form input:not(:last-child){
+    outline: none;
+    border: none;
+    caret-color: var(--spring-green);
+    color: var(--spring-green);
+    font-size: calc(1.3vh + 1.3vw);
+    width: 80%;
+    background-color: var(--honeydew);
+    padding: .5rem;
+    border-radius: .5rem;
+}
+
+#file{
+    display: none;
+}
+
+.register__avatar{
+    display: flex;
+    gap: 1rem;
+    cursor: pointer;
+    align-items: center;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1rem;
+    color: var(--spring-green);
+}
+
+label img{
+    width: calc(2vw + 3vh);
+}
+
+.register__button{
+    width: 80%;
+    padding: .5rem;
+    height: 6vh;
+    font-size: 1.3rem;
+    background-color: var(--spring-green);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color: var(--honeydew);
+    border-radius: 5vh;
+    font-weight: 800;
+    cursor: pointer;
+    border: none;
+}
+
+@media (orientation:portrait) {
+    .register__slogan{
+        flex-direction: column;
+        align-self: flex-end;
+        box-sizing: border-box;
+        padding: 0 5%;
+    }
+    .register__slogan img{
+        box-sizing: border-box;
+        width: 100%;
+    }
+}
+
+@keyframes lapper {
+    0%{
+        color: #9530F2;
+    }
+    100%{
+        color: #18f264;
+    }
+}

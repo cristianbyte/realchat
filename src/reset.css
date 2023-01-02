@@ -46,3 +46,13 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
+
+::-webkit-scrollbar {
+    width: .5rem;
+	background-color: var(--aquamerine);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--spring-green);
+	border-radius: .5rem;
+}

@@ -21,7 +21,7 @@ export default function Register(){
                             <img src={addImge} alt="avatar for profile" />
                             <p>Add an avatar</p>
                         </label>
-                        <button className='register__button' >Sing up</button>
+                        <button className='register__button' >Sign up</button>
                     </form>
                     <p>Do you have an account? Login</p>
             </div>

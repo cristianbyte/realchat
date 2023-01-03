@@ -1,5 +1,17 @@
 .navbar{
     width: 25vw;
-    height: 100vh;
-    overflow: scroll;
+}
+
+.navbar__chats{
+    width: 25vw;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 90vh;
+    overflow-y: scroll;
+}
+
+.navbar__chats::-webkit-scrollbar{
+    background-color: var(--honeydew);
 }

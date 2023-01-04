@@ -10,6 +10,7 @@
 }
 
 .contactImage{
+    position: relative;
     display: flex;
     align-items: center;
 }
@@ -22,7 +23,7 @@
 .contactFoo{
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     position: relative;
     padding: 0 .5rem;
     width: calc(100% - 9vh);
@@ -34,11 +35,11 @@
 
 .contactFoo__msm{
     position: relative;
-    padding-top: .5rem;
+    font-size: .9rem;
+    padding-bottom: .2rem;
     color: var(--xyketic);
     opacity: .5;
     font-style: italic;
-    height: 1rem;
     width: calc(95%);
     text-overflow: ellipsis;
     overflow: hidden;
@@ -62,4 +63,24 @@
     background-color: var(--aquamerine);
     position: relative;
     z-index: 10;
+}
+
+.avalible,.busy, .text-me{
+    color: var(--honeydew);
+    text-transform: capitalize;
+    padding: .2rem;
+    border-radius: .2rem;
+    width: max-content;
+}
+
+.avalible{
+    background-color:var(--spring-green);
+}
+
+.busy{
+    background-color: black;
+}
+
+.text-me{
+    background-color: purple;
 }

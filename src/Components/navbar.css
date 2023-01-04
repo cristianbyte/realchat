@@ -9,7 +9,7 @@
     flex-direction: column;
     position: relative;
     height: 90vh;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .navbar__chats::-webkit-scrollbar{

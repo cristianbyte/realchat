@@ -12,13 +12,13 @@ export default function Contact({ name, picture, state, message, notification, g
                 :
                 <div className="contactImage">
                     <img srcSet={picture} className='contactImage__pic' alt="profilito"/>
-                    <span className={state}></span>
                 </div>
 
             }
             <div className="contactFoo">
                 <h4 className='contactFoo__name' >{name}</h4>
                 <p className='contactFoo__msm'>{message}</p>
+                <span className={state}>{state.replace('-', ' ')}</span>
                 <span className='contactFoo__bell'>{notification}</span>
             </div>
         </div>

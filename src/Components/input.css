@@ -1,0 +1,46 @@
+.input{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 10vh;
+    background-color: var(--aquamerine);
+    padding: .5rem;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input__container{
+    display: flex;
+    height: 80%;
+    width: calc(100% - 2rem);
+    align-items: center;
+    justify-content: center;
+    justify-self: flex-end;
+    background-color:  var(--honeydew);
+    border-radius: 2rem;
+    box-sizing: border-box;
+}
+
+.input__input{
+    width: 90%;
+    padding: .5rem .5rem .5rem 2vw;
+    font-size: 1.5rem;
+    border: none;
+    caret-color: var(--spring-green);
+    color: gray;
+    outline: none;
+    background-color: transparent;
+}
+
+.input__input::placeholder{
+    color: var(--spring-green);
+}
+
+.input__icon{
+    color: var(--spring-green);
+    cursor: pointer;
+    font-size: 2rem;
+    padding-right: .5rem;
+}

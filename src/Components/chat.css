@@ -1,4 +1,32 @@
 .chat{
+    position: relative;
     width: 50vw;
+    height: 100%;
     background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.chatHeader{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background-color: var(--honeydew);
+}
+
+.chatHeader .contactFoo{
+    height: 60%;
+}
+
+.chatHeader .contactImage{
+    transform: scale(.9);
+    padding: .2rem 0;
+}
+
+.chatHeader__settings{
+    color: var(--purple-x-11);
+    font-size: 2rem;
+    padding: 0 1rem;
+    cursor: pointer;
 }

@@ -1,0 +1,13 @@
+.dialogue{
+    background-color: var(--white);
+    height: 90vh;
+    width: 100%;
+    padding: 0 .5rem 0 1rem;
+    box-sizing: border-box;
+    overflow-y: scroll;
+    padding-bottom: 10vh;
+}
+
+.dialogue::-webkit-scrollbar-track{
+    margin-bottom: 10vh;
+}

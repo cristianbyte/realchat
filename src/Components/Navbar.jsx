@@ -45,7 +45,6 @@ export default function Navbar(){
                 <Contact onClick={() => activateContact(3)} active={activeContact === 3} name='Leslie' picture={Leslie} state='avalible' message='Ese es mi nombre' notification='1'/>
                 <Contact onClick={() => activateContact(2)} active={activeContact === 2} name='Jack' picture={Nin} state='busy' message='Tengo una nueva misión' notification='3'/>
                 <Contact onClick={() => activateContact(4)} active={activeContact === 4} name='Sam' picture={Future} state='text-me' message='Everything is possible, the only limit is your mind.' notification='1'/>
-
             </div>
         </div>
     )

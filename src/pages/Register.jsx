@@ -1,7 +1,7 @@
 import logo from '../assets/logo.png'
 import addImge from '../assets/addImage.png'
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { auth, storage, db } from '../firebase'
 import { useState } from 'react';
 import { doc, setDoc } from 'firebase/firestore';
@@ -17,43 +17,44 @@ export default function Register(){
         const email = e.target[1].value
         const password = e.target[2].value
         const file = e.target[3].files[0]
-    
-        try{
-            const res = createUserWithEmailAndPassword(auth, email, password)
-            const idToken = await res.user.getIdToken();
-            console.log(idToken)
 
-            const storageRef = ref(storage, name);
+        const storageRef = ref(storage, name);
 
-            const uploadTask = uploadBytesResumable(storageRef, file);
-            
-            uploadTask.on(
-                (error) => {
-                    setError(true)
-                }, 
-                () => {
-                // Handle successful uploads on complete
-                // For instance, get the download URL: https://firebasestorage.googleapis.com/...
-                    getDownloadURL(uploadTask.snapshot.ref).then( async (downloadURL) => {
-                        await updateProfile(res.user,{
-                            name,
-                            photoURL:downloadURL,
-                        })
-                        await setDoc(doc(db,'users', res.user.uid),{
+        const metadata = {
+            contentType: 'image/jpeg',
+            property: name,
+        };
+
+        const res = await createUserWithEmailAndPassword(auth, email, password)
+
+        console.log(res)
+        
+        // Upload the file and metadata
+        uploadBytes(storageRef, file, metadata).then(
+            ()=>{
+                console.log('upload success')
+                getDownloadURL(ref(storage, name))
+                .then((url) => {
+                    updateProfile(res.user, {
+                        name: name, photoURL: url
+                        }).then(() => {
+                        console.log( 'success' )
+                        setDoc(doc(db,'users', res.user.uid),{
                             uid:res.user.uid,
                             name,
                             email,
-                            photoURL:downloadURL,
+                            photoURL:res.user.photoURL,
                         })
-                    });
-                }
-            );
-
-
-        }catch(err){
-            setError(true)
-        }
+                    })
+                })
+                .catch((error) => {
+                    setError(true)
+                    console.log(error)
+                })
+            }
+        )
     }
+
 
     return (
         <section className="register" >

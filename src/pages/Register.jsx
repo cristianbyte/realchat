@@ -5,11 +5,13 @@ import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { auth, storage, db } from '../firebase'
 import { useState } from 'react';
 import { doc, setDoc } from 'firebase/firestore';
-
+import { useNavigate } from 'react-router-dom';
 
 export default function Register(){
 
     const [error, setError] = useState(false)
+
+    const navigate = useNavigate()
 
     async function handleSubmit (e){
         e.preventDefault()
@@ -21,8 +23,7 @@ export default function Register(){
         const storageRef = ref(storage, name);
 
         const metadata = {
-            contentType: 'image/jpeg',
-            property: name,
+            contentType: 'image/jpeg'
         };
 
         const res = await createUserWithEmailAndPassword(auth, email, password)
@@ -45,6 +46,9 @@ export default function Register(){
                             email,
                             photoURL:res.user.photoURL,
                         })
+                        setDoc(doc(db,'userChats', res.user.uid), {})
+                        navigate('/')
+                    
                     })
                 })
                 .catch((error) => {

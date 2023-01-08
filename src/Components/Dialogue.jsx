@@ -1,16 +1,21 @@
 import './dialogue.css'
 import Message from './Message'
-import {enableScrolling, disableScrolling} from './Navbar'
-
 
 export default function Dialogue(){
 
-    const root = document.querySelector('.dialogue');
+    const [colorScroll, setColorScroll] = useState('#18f26400');
 
+    function disableScrolling() {
+        setColorScroll('#18f26400')
+    }
+    
+    function enableScrolling() {
+        setColorScroll('#18f264')
+    }
 
     return (
-        <div className="dialogue" onScroll={()=>{enableScrolling(root)}} onMouseOver={()=>{enableScrolling(root)}}
-        onMouseLeave={()=>{disableScrolling(root)}} >
+        <div className="dialogue" style={{'--foo': colorScroll}} onScroll={enableScrolling} onMouseOver={enableScrolling}
+        onMouseLeave={disableScrolling} >
 
             <Message message="Hey, what's up?" date='2:00' me={true} />
             <Message me={false} message="Not much, just hanging out at home. What about you?" date='2:01' />

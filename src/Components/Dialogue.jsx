@@ -1,5 +1,6 @@
 import './dialogue.css'
 import Message from './Message'
+import { useState } from 'react';
 
 export default function Dialogue(){
 

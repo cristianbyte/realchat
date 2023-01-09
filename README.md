@@ -25,4 +25,4 @@ RealChat was built using the following open-source libraries:
 * [Firebase](https://firebase.google.com)
 
 ## License
-RealChat is released under the [MIT](./README.md) License.
+RealChat is released under the [MIT](./LICENCE) License.
